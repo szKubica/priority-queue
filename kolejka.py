@@ -3,6 +3,10 @@ import time
 import random
 
 
+y_values = []
+x_values = [40, 80, 400, 800, 4000, 8000, 40000, 80000]
+
+
 def timeit(func):
     @wraps(func)
     def timeit_wrapper(*args, **kwargs):
@@ -11,6 +15,7 @@ def timeit(func):
         end_time = time.perf_counter()
         total_time = end_time - start_time
         print(f'Function {func.__name__}{args} Took {total_time:.4f} seconds')
+        y_values.append('{:.4f}'.format(total_time))
         return result
     return timeit_wrapper
 
@@ -84,6 +89,7 @@ def add_elements(queue, volume):
 
 if __name__ == '__main__':
     add_elements(queue1, 40)
+    queue1.delete()
     add_elements(queue1, 80)
     add_elements(queue2, 400)
     add_elements(queue2, 800)
@@ -91,3 +97,5 @@ if __name__ == '__main__':
     add_elements(queue4, 8000)
     add_elements(queue3, 40000)
     add_elements(queue4, 80000)
+    queue1.delete()
+

@@ -9,7 +9,7 @@ if __name__ == '__main__':
     print("5.Exit")
 
     while True:
-        wybor = input("Wybierz funkcję: ")
+        wybor = input("Choose function: ")
 
         if wybor == '1':
             elem, weight = input("Enter a number and after the space its weight to enter the queue: ").split()
@@ -28,4 +28,4 @@ if __name__ == '__main__':
             break
 
         if int(wybor) not in range(1,6):
-            print("Wybierz poprawny numer funkcji!")
+            print("Choose valid function number!")
