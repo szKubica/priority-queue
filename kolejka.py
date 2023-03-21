@@ -63,7 +63,11 @@ class PriorityQueue:
             print("First element:", self.queue[0][0])
 
 
-queue = PriorityQueue()
+queue1 = PriorityQueue()
+queue2 = PriorityQueue()
+queue3 = PriorityQueue()
+queue4 = PriorityQueue()
+queue5 = PriorityQueue()
 
 @timeit
 def add_elements(queue, volume):
@@ -78,35 +82,12 @@ def add_elements(queue, volume):
     for element, weight in elements:
         queue.add(element, weight)
 
-add_elements(queue, 10)
-add_elements(queue, 100)
-add_elements(queue, 4000)
-add_elements(queue, 10000)
-
-print("1.Add element")
-print("2.Delete element")
-print("3.Display queue")
-print("4.Display first element of queue")
-print("5.Exit")
-
-while True:
-    wybor = input("Wybierz funkcję: ")
-
-    if wybor == '1':
-        elem, weight = input("Enter a number and after the space its weight to enter the queue: ").split()
-        queue.add(elem, weight)
-
-    if wybor == '2':
-        queue.delete()
-
-    if wybor == '3':
-        queue.display()
-
-    if wybor == '4':
-        queue.first()
-
-    if wybor == '5':
-        break
-
-    if int(wybor) not in range(1,6):
-        print("Wybierz poprawny numer funkcji!")
+if __name__ == '__main__':
+    add_elements(queue1, 40)
+    add_elements(queue1, 80)
+    add_elements(queue2, 400)
+    add_elements(queue2, 800)
+    add_elements(queue3, 4000)
+    add_elements(queue4, 8000)
+    add_elements(queue3, 40000)
+    add_elements(queue4, 80000)
